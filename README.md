@@ -1,6 +1,6 @@
 # 🐍 Python Reviewer
 
-Welcome to your personal Python reviewer! This guide is designed to be a quick reference for key Python concepts, making it easy to refresh your memory whenever you visit this repository on GitHub.
+Hi and welcome to my personal **Python Reviewer**! This guide is designed to be a quick reference for key Python concepts, making it easy to refresh your memory whenever you visit this repository on GitHub.
 
 ---
 
