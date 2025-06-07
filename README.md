@@ -119,3 +119,123 @@ evens = [x for x in numbers if x % 2 == 0]
 ---
 
 This concludes our initial chapter on lists. Let me know what topic you'd like to cover next! We can dive into Tuples, Dictionaries, Sets, or other advanced features. 
+
+---
+
+## 📖 Chapter 2: Unlocking Dictionaries
+
+Dictionaries are used to store data values in **key:value** pairs. They are **ordered** (as of Python 3.7), **mutable**, and do **not allow duplicate keys**.
+
+### ✨ 2.1 Creating Dictionaries
+
+Create a dictionary by placing key-value pairs inside curly braces `{}`, separated by commas.
+
+```python
+# An empty dictionary
+empty_dict = {}
+
+# A simple dictionary
+person = {
+    "name": "John Doe",
+    "age": 30,
+    "city": "New York"
+}
+
+# Using the dict() constructor
+person2 = dict(name="Jane Doe", age=25, city="London")
+```
+
+> **💡 Pro-Tip:** Keys must be of an immutable type (like strings, numbers, or tuples). Values can be of any data type.
+
+### ⛓️ 2.2 Accessing and Modifying Items
+
+You can access dictionary items by referring to their key name, inside square brackets `[]`.
+
+```python
+person = {"name": "John Doe", "age": 30}
+
+# Accessing a value
+print(person["name"])  # Output: John Doe
+
+# Using the get() method is safer
+print(person.get("age")) # Output: 30
+print(person.get("country")) # Output: None (avoids KeyError)
+
+# Adding a new key-value pair
+person["email"] = "john.doe@example.com"
+# person is now {'name': 'John Doe', 'age': 30, 'email': 'john.doe@example.com'}
+
+# Modifying a value
+person["age"] = 31
+# person is now {'name': 'John Doe', 'age': 31, 'email': 'john.doe@example.com'}
+```
+
+### 🛠️ 2.3 Removing Items
+
+There are several methods to remove items from a dictionary.
+
+- `pop()`: Removes the item with the specified key name.
+- `popitem()`: Removes the last inserted item (in Python 3.7+).
+- `clear()`: Empties the dictionary.
+- `del`: A keyword to remove an item with a specified key.
+
+```python
+person = {"name": "John Doe", "age": 30, "city": "New York"}
+
+person.pop("age")
+# person is now {'name': 'John Doe', 'city': 'New York'}
+
+person.popitem()
+# person is now {'name': 'John Doe'}
+
+del person["name"]
+# person is now {}
+
+person.clear()
+# person is now {}
+```
+
+### ⚙️ 2.4 Useful Dictionary Methods & Iteration
+
+Here are some common methods for working with dictionaries.
+
+| Method | Description |
+| --- | --- |
+| `keys()` | Returns a view object displaying a list of all the keys. |
+| `values()` | Returns a view object displaying a list of all the values. |
+| `items()` | Returns a view object displaying a list of key-value tuple pairs. |
+| `update(dict2)` | Updates the dictionary with items from another dictionary. |
+
+You can iterate through dictionaries easily.
+
+```python
+person = {"name": "John", "age": 30, "city": "New York"}
+
+# Iterate over keys
+for key in person.keys():
+    print(key)
+
+# Iterate over values
+for value in person.values():
+    print(value)
+
+# Iterate over key-value pairs
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+### 🚀 2.5 Dictionary Comprehensions
+
+Similar to list comprehensions, dictionary comprehensions provide a concise way to create dictionaries.
+
+```python
+# Create a dictionary of squares
+squares = {x: x**2 for x in range(5)}
+# {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+# Create a dictionary from two lists
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+my_dict = {k: v for (k, v) in zip(keys, values)}
+# {'a': 1, 'b': 2, 'c': 3}
+```
