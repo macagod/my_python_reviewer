@@ -118,10 +118,6 @@ evens = [x for x in numbers if x % 2 == 0]
 
 ---
 
-This concludes our initial chapter on lists. Let me know what topic you'd like to cover next! We can dive into Tuples, Dictionaries, Sets, or other advanced features. 
-
----
-
 ## 📖 Chapter 2: Unlocking Dictionaries
 
 Dictionaries are used to store data values in **key:value** pairs. They are **ordered** (as of Python 3.7), **mutable**, and do **not allow duplicate keys**.
